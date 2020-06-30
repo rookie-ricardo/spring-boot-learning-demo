@@ -7,11 +7,11 @@ import java.util.List;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
- * @author zhangyanqi
- * @since 2020-06-13
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 public interface RoleInfoMapper extends BaseMapper<RoleInfo> {
 

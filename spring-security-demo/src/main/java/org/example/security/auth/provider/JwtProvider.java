@@ -24,7 +24,7 @@ import java.util.Date;
  * payload 主要存放用户名、创建时间、生成时间：{"sub":"wang","created":1489079981393,"exp":1489684781}
  * signature 生成算法：HMACSHA512(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
  * <p>
- * Created by zhangyanqi
+ * Created by 和耳朵
  */
 @Slf4j
 @Component

@@ -27,7 +27,9 @@ import java.io.IOException;
  * 将用户信息传给下一条过滤器，
  * 拿到上下文对象赋值到上下文。
  * <p>
- * Created by zhangyanqi
+ *
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 @Slf4j
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {

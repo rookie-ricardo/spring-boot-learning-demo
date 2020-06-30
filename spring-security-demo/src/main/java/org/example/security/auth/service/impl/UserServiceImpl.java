@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- *  User服务实现类
+ * User服务实现类
  * </p>
  *
- * @author rookie.zhang
- * @since 2019-11-01
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 @Slf4j
 @Service

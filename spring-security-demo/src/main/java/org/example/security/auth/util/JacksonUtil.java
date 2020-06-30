@@ -14,8 +14,8 @@ import java.util.Set;
  * 封装了Jackson的json工具类，用于代替JSONObject
  * </p>
  *
- * @author rookie.zhang
- * @since 2020-03-13
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 
 @Slf4j

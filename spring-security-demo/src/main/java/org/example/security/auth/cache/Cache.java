@@ -4,11 +4,11 @@ import org.example.security.auth.constant.CacheName;
 
 /**
  * <p>
- *
+ * Cache接口
  * </p>
  *
- * @author 张笑生
- * @since 2020-06-20 22:55
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 public interface Cache {
 

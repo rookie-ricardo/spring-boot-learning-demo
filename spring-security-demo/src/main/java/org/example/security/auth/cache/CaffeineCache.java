@@ -10,11 +10,11 @@ import java.util.Objects;
 
 /**
  * <p>
- *
+ * CaffeineCache实现类
  * </p>
  *
- * @author 张笑生
- * @since 2020-06-20 22:41
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 @Slf4j
 @Service("caffeineCache")

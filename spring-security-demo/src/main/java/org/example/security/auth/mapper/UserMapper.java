@@ -5,11 +5,11 @@ import org.example.security.auth.entity.UserInfo;
 
 /**
  * <p>
- *  User Mapper 接口
+ * User Mapper 接口
  * </p>
  *
- * @author rookie.zhang
- * @since 2019-11-01
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 public interface UserMapper extends BaseMapper<UserInfo> {
 

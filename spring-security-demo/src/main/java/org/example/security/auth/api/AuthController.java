@@ -18,8 +18,8 @@ import javax.validation.Valid;
  * 认证
  * </p>
  *
- * @author zhangyanqi
- * @since 2020-06-18
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 @RestController
 @RequestMapping("/api/auth")

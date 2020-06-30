@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthServiceImpl implements AuthService {
     @Autowired
-    private AuthenticationManager authenticationManager2;
+    private AuthenticationManager authenticationManager;
     @Autowired
     private JwtProvider jwtProvider;
     @Autowired
@@ -33,7 +33,7 @@ public class AuthServiceImpl implements AuthService {
         // 1 创建UsernamePasswordAuthenticationToken
         UsernamePasswordAuthenticationToken usernameAuthentication = new UsernamePasswordAuthenticationToken(loginAccount, password);
         // 2 认证
-        Authentication authentication = this.authenticationManager2.authenticate(usernameAuthentication);
+        Authentication authentication = this.authenticationManager.authenticate(usernameAuthentication);
         // 3 保存认证信息
         SecurityContextHolder.getContext().setAuthentication(authentication);
         // 4 生成自定义token
@@ -47,8 +47,8 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public ApiResult logout() {
-        SecurityContextHolder.clearContext();
         caffeineCache.remove(CacheName.USER, AuthProvider.getLoginAccount());
+        SecurityContextHolder.clearContext();
         return ApiResult.ok();
     }
 

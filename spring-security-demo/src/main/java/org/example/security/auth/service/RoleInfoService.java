@@ -7,11 +7,11 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
- * @author zhangyanqi
- * @since 2020-06-13
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 public interface RoleInfoService extends IService<RoleInfo> {
 

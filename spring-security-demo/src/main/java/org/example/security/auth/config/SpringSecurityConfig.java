@@ -16,8 +16,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
- * @author rookie.zhang
- * @date 2019-10-05
+ * <p>
+ * SpringSecurity配置文件
+ * </p>
+ *
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
@@ -47,8 +51,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors()
                 .and()
                 .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-//        http.sessionManagement().maximumSessions(1).expiredUrl("/login");
     }
 
     @Bean
@@ -71,14 +73,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         return new JwtAuthenticationTokenFilter();
     }
 
-//    @Bean
-//    @Override
-//    public AuthenticationManager authenticationManagerBean() throws Exception {
-//        return super.authenticationManagerBean();
-//    }
-//
     @Bean
-    public AuthenticationManager authenticationManager2() throws Exception {
+    public AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
 

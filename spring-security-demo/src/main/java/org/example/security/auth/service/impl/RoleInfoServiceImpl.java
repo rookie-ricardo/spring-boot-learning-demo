@@ -11,11 +11,11 @@ import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
- * @author zhangyanqi
- * @since 2020-06-13
+ * @author 和耳朵
+ * @since 2020-06-30
  */
 @Service
 public class RoleInfoServiceImpl extends ServiceImpl<RoleInfoMapper, RoleInfo> implements RoleInfoService {

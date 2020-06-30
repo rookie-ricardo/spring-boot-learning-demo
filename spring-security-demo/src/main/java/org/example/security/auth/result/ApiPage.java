@@ -7,11 +7,11 @@ import java.util.List;
 
 /**
  * <p>
- *  Api分页工具类
+ * Api分页工具类
  * </p>
  *
- * @author 阿澈
- * @since 2020-01-05
+ * @author 和耳朵
+ * @since 2020-06-05
  */
 @JsonIgnoreProperties(value = {"records","total","size","current","records","searchCount","orders"})
 public class ApiPage<T> extends Page<T> {
