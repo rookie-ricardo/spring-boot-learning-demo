@@ -1,4 +1,4 @@
-package org.example.security.auth.handle;
+package org.example.security.auth.component;
 
 import org.example.security.auth.result.ApiResult;
 import org.example.security.auth.result.ApiStatus;

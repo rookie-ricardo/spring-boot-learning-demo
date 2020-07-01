@@ -1,4 +1,4 @@
-package org.example.security.auth.handle;
+package org.example.security.auth.component;
 
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;

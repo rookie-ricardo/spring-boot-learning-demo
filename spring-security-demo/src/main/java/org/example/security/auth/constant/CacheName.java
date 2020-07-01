@@ -8,9 +8,10 @@ import java.util.List;
 @AllArgsConstructor
 public enum CacheName {
 
-    USER("USER");
+    USER("USER"),
+    PERMISSION("PERMISSION");
 
-    private String cacheName;
+    private final String cacheName;
 
     public static List<String> getCacheNames(){
         List<String> cacheNameList = new ArrayList<>(CacheName.values().length);
