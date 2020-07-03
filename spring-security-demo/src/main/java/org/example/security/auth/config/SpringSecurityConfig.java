@@ -57,10 +57,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .accessDeniedHandler(restfulAccessDeniedHandler())
                 .authenticationEntryPoint(restAuthenticationEntryPoint())
                 .and()
+                // 将自定义的JWT过滤器放到过滤链中
                 .addFilterBefore(jwtAuthenticationTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+                // 打开Spring Security的跨域
                 .cors()
                 .and()
-                .csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                // 关闭CSRF
+                .csrf().disable()
+                // 关闭Session机制
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Bean
@@ -90,7 +95,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AccessDecisionManager accessDecisionManager() {
-        // 这里返回默认的 accessDecisionManager 仅仅把投票器实现换一下
+        // 这里返回默认的 accessDecisionManager 仅仅把投票器实现换成我们自己定义的投票器
         List<AccessDecisionVoter<?>> decisionVoters = Collections.singletonList(new AccessDecisionProcessor());
         return new AffirmativeBased(decisionVoters);
     }

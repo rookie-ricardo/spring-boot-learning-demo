@@ -30,6 +30,15 @@ public class AuthController {
     @Autowired
     private JwtProvider jwtProvider;
 
+    /**
+     * 登录方法
+     *
+     * loginAccount：user
+     * password：123456
+     *
+     * @param loginInfo
+     * @return ApiResult
+     */
     @PostMapping("/login")
     public ApiResult login(@Valid @RequestBody LoginInfo loginInfo) {
         return authService.login(loginInfo.getLoginAccount(), loginInfo.getPassword());
