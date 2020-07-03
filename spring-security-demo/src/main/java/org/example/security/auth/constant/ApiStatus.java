@@ -1,4 +1,4 @@
-package org.example.security.auth.result;
+package org.example.security.auth.constant;
 
 public enum ApiStatus {
 

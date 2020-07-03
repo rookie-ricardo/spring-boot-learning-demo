@@ -1,12 +1,12 @@
 package org.example.security.auth.service.impl;
 
 import org.example.security.auth.bo.AccessToken;
+import org.example.security.auth.bo.ApiResult;
 import org.example.security.auth.cache.Cache;
 import org.example.security.auth.constant.CacheName;
 import org.example.security.auth.entity.UserDetail;
 import org.example.security.auth.provider.AuthProvider;
 import org.example.security.auth.provider.JwtProvider;
-import org.example.security.auth.result.ApiResult;
 import org.example.security.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

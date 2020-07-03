@@ -1,4 +1,4 @@
-package org.example.security.auth.result;
+package org.example.security.auth.bo;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

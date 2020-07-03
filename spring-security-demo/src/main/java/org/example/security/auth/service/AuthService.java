@@ -1,6 +1,6 @@
 package org.example.security.auth.service;
 
-import org.example.security.auth.result.ApiResult;
+import org.example.security.auth.bo.ApiResult;
 
 public interface AuthService {
 

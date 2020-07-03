@@ -1,8 +1,8 @@
 package org.example.security.auth.api;
 
+import org.example.security.auth.bo.ApiResult;
 import org.example.security.auth.bo.LoginInfo;
 import org.example.security.auth.provider.JwtProvider;
-import org.example.security.auth.result.ApiResult;
 import org.example.security.auth.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

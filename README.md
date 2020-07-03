@@ -1,37 +1,13 @@
-# Home
+# Spring Boot Learning Demo
+![Spring Boot 2.3](https://img.shields.io/badge/SpringBoot-2.3-blue.svg)
+![JDK 1.8](https://img.shields.io/badge/JDK-1.8-brightgreen.svg)
+![Github](https://img.shields.io/badge/GitHub-Start+-yellow.svg?style=social&logo=github)
+![Gitee](https://img.shields.io/badge/Gitee-Start+-yellow.svg?style=social&logo=github)
 
-#### 介绍
-学习demo
+以 Spring Boot 为基础，构建多种Java项目实例，以实用为目的帮助大家快速上手 Spring Boot 开发。
 
-#### 软件架构
-软件架构说明
+Learning Demo 的结构或许复杂，依赖或许繁多，但是生活应该比这复杂多了。
 
+**Spring Boot Learning List**
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 码云特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+- [spring-security-demo](/tree/master/spring-security-demo)：Spring Security + JWT 实现认证与动态鉴权。

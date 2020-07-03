@@ -1,6 +1,6 @@
 package org.example.security.auth.api;
 
-import org.example.security.auth.result.ApiResult;
+import org.example.security.auth.bo.ApiResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

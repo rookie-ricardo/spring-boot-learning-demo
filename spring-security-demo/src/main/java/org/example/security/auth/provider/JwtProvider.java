@@ -47,7 +47,8 @@ public class JwtProvider {
     }
 
     /**
-     * 根据用户信息生成token
+     * 生成token
+     * 参数是我们想放入token中的字符串
      */
     public AccessToken createToken(String subject) {
         // 当前时间
@@ -67,6 +68,7 @@ public class JwtProvider {
     /**
      * 验证token是否还有效
      *
+     * 反解析出token中信息，然后与参数中的信息比较，再校验过期时间
      * @param token       客户端传入的token
      * @param userDetails 从数据库中查询出来的用户信息
      */

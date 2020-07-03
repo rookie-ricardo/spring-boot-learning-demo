@@ -1,9 +1,10 @@
-package org.example.security.auth.result;
+package org.example.security.auth.bo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.security.auth.constant.ApiStatus;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;

@@ -1,7 +1,7 @@
 package org.example.security.auth.component;
 
-import org.example.security.auth.result.ApiResult;
-import org.example.security.auth.result.ApiStatus;
+import org.example.security.auth.bo.ApiResult;
+import org.example.security.auth.constant.ApiStatus;
 import org.example.security.auth.util.JacksonUtil;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
