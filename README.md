@@ -6,11 +6,11 @@
 [![Github](https://gitee.com/he-erduo/codes/98pgj1wezby2dntk6qvx082/raw?blob_name=Github-Start+-yellow.svg)](https://github.com/he-erduo/spring-boot-learning-demo)
 
 以 Spring Boot 为基础，构建多种Java项目实例，以实用为目的帮助大家快速上手 Spring Boot 开发，积累开发经验。
-
+<br>
 
 ## 楔子
 
-
+<br>
 我是耳朵，一个一直想做知识输出的人。
 
 19年毕业后，我便一人离家独自来沪，出门前我以为上海是高楼林立，人流涌动。
@@ -35,12 +35,13 @@
 
 如果此仓库及其系列文章对你有所帮助，你们的每个 Start 或 Fork 都是对我知识输出的莫大肯定，我希望它以后是那种可以保存在书签里的知识仓库。
 
+<br>
 
 ## Spring Boot Learning List
 
 - [spring-security-demo](/tree/master/spring-security-demo)：Spring Security + JWT 实现认证与动态鉴权。
 
-
+<br>
 
 ---
 

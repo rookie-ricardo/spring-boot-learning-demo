@@ -62,7 +62,7 @@ public class JwtProvider {
                 .setExpiration(expirationDate)
                 .signWith(SignatureAlgorithm.HS512, jwtProperties.getApiSecretKey())
                 .compact();
-        return AccessToken.builder().token(token).expirationTime(expirationDate).build();
+        return AccessToken.builder().loginAccount(subject).token(token).expirationTime(expirationDate).build();
     }
 
     /**
