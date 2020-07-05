@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDecisionVoter;
-import org.springframework.security.access.vote.AffirmativeBased;
+import org.springframework.security.access.vote.UnanimousBased;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -17,9 +17,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.FilterInvocation;
+import org.springframework.security.web.access.expression.WebExpressionVoter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -36,6 +38,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * 自定义访问控制，默认是所有访问都要经过认证。
+     *
      * @param http
      * @throws Exception
      */
@@ -94,10 +97,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
+    public AccessDecisionVoter<FilterInvocation> accessDecisionProcessor() {
+        return new AccessDecisionProcessor();
+    }
+
+    @Bean
     public AccessDecisionManager accessDecisionManager() {
-        // 这里返回默认的 accessDecisionManager 仅仅把投票器实现换成我们自己定义的投票器
-        List<AccessDecisionVoter<?>> decisionVoters = Collections.singletonList(new AccessDecisionProcessor());
-        return new AffirmativeBased(decisionVoters);
+        // 构造一个新的AccessDecisionManager 放入两个投票器
+        List<AccessDecisionVoter<?>> decisionVoters = Arrays.asList(new WebExpressionVoter(), accessDecisionProcessor());
+        return new UnanimousBased(decisionVoters);
     }
 
 }

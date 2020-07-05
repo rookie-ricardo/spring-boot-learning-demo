@@ -13,8 +13,25 @@ import java.util.List;
  * @author 和耳朵
  * @since 2020-06-05
  */
-@JsonIgnoreProperties(value = {"records","total","size","current","records","searchCount","orders"})
+@JsonIgnoreProperties(value = {"records", "total", "size", "current", "records", "searchCount", "orders"})
 public class ApiPage<T> extends Page<T> {
+
+    /**
+     * 总数
+     */
+    private long totalCount = 0;
+    /**
+     * 每页显示条数，默认 10
+     */
+    private long pageSize = 10;
+    /**
+     * 当前页
+     */
+    private long currentPage = 1;
+    /**
+     * 查询数据列表
+     */
+    private List<T> data;
 
     public ApiPage() {
         super();
@@ -32,31 +49,10 @@ public class ApiPage<T> extends Page<T> {
         super(current, size, isSearchCount);
     }
 
+
     public ApiPage(long current, long size, long total, boolean isSearchCount) {
         super(current, size, total, isSearchCount);
     }
-
-    /**
-     * 总数
-     */
-    private long totalCount = 0;
-
-    /**
-     * 每页显示条数，默认 10
-     */
-    private long pageSize = 10;
-
-    /**
-     * 当前页
-     */
-    private long currentPage = 1;
-
-
-    /**
-     * 查询数据列表
-     */
-    private List<T> data;
-
 
     public long getTotalCount() {
         return super.getTotal();

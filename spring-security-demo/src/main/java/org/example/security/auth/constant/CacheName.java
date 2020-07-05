@@ -13,7 +13,7 @@ public enum CacheName {
 
     private final String cacheName;
 
-    public static List<String> getCacheNames(){
+    public static List<String> getCacheNames() {
         List<String> cacheNameList = new ArrayList<>(CacheName.values().length);
         CacheName[] values = CacheName.values();
         for (int i = 0; i < CacheName.values().length; i++) {

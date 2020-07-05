@@ -1,5 +1,6 @@
 package org.example.security.auth.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.security.auth.bo.AccessToken;
 import org.example.security.auth.bo.ApiResult;
 import org.example.security.auth.cache.Cache;
@@ -16,6 +17,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class AuthServiceImpl implements AuthService {
     @Autowired
@@ -29,7 +31,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public ApiResult login(String loginAccount, String password) {
 
-        System.out.println("login");
+        log.debug("进入login方法");
         // 1 创建UsernamePasswordAuthenticationToken
         UsernamePasswordAuthenticationToken usernameAuthentication = new UsernamePasswordAuthenticationToken(loginAccount, password);
         // 2 认证

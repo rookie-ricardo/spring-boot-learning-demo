@@ -1,7 +1,6 @@
 package org.example.security.auth.component;
 
 import org.example.security.auth.bo.ApiResult;
-import org.example.security.auth.constant.ApiStatus;
 import org.example.security.auth.util.JacksonUtil;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -25,11 +24,11 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        response.setHeader("Cache-Control","no-cache");
+        response.setHeader("Cache-Control", "no-cache");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-        response.getWriter().println(JacksonUtil.toJsonString(ApiResult.instance(ApiStatus.UNAUTHORIZED)));
+        response.getWriter().println(JacksonUtil.toJsonString(ApiResult.fail(authException.getMessage())));
         response.getWriter().flush();
     }
 }

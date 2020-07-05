@@ -67,8 +67,9 @@ public class JwtProvider {
 
     /**
      * 验证token是否还有效
-     *
+     * <p>
      * 反解析出token中信息，然后与参数中的信息比较，再校验过期时间
+     *
      * @param token       客户端传入的token
      * @param userDetails 从数据库中查询出来的用户信息
      */

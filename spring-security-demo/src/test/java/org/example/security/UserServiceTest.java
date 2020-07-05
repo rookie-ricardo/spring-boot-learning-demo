@@ -17,7 +17,7 @@ public class UserServiceTest {
     private PasswordEncoder passwordEncoder;
 
     @Test
-    public void insertData(){
+    public void insertData() {
         UserInfo userInfo = new UserInfo();
         userInfo.setUsername("test");
         userInfo.setPassword(passwordEncoder.encode("123456"));
@@ -31,7 +31,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void encode(){
+    public void encode() {
         System.out.println(passwordEncoder.encode("123456"));
     }
 }

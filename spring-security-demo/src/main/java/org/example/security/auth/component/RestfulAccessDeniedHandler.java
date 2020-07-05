@@ -28,7 +28,7 @@ public class RestfulAccessDeniedHandler implements AccessDeniedHandler {
                        HttpServletResponse response,
                        AccessDeniedException e) throws IOException, ServletException {
 
-        response.setHeader("Cache-Control","no-cache");
+        response.setHeader("Cache-Control", "no-cache");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);

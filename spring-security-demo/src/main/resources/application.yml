@@ -31,21 +31,26 @@ spring:
     password: 256156
     driver-class-name: com.mysql.jdbc.Driver
 
-
 ############################# spring config end ############################
 
 ############################### mybatis-plus start #################################
 mybatis-plus:
-#  检查XML映射文件
+  #  检查XML映射文件
   check-config-location: true
   configuration:
-#    驼峰命名
+    #    驼峰命名
     map-underscore-to-camel-case: true
   global-config:
     db-config:
-#      设置逻辑删除
+      #      设置逻辑删除
       logic-delete-value: 0
       logic-not-delete-value: 1
   mapper-locations: classpath*:mapper/**/*Mapper.xml
+logging:
+  level:
+    web: debug
+    org:
+      example:
+        security: debug
 
 ################################ mybatis-plus end ##################################

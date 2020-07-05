@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.security.auth.mapper.PermissionMapper">
+
+
+    <select id="listPermissionInfoBO" resultType="org.example.security.auth.bo.PermissionInfoBO">
+        SELECT a.id,a.permission_name,a.permission_uri,a.permission_method, c.role_name,c.role_code
+        from permission_info a
+        inner join role_permission_link b on a.id=b.permission_id
+        inner join role_info c on c.id=b.role_id
+        where a.active_status=1;
+    </select>
+
+</mapper>

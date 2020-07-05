@@ -14,21 +14,23 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author 和耳朵
- * @since 2020-06-30
+ * @since 2020-07-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class UserInfo implements Serializable {
+public class PermissionInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id")
     private String id;
 
-    private String username;
+    private String permissionName;
 
-    private String password;
+    private String permissionUri;
+
+    private String permissionMethod;
 
     private Integer activeStatus;
 
