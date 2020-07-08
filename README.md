@@ -10,7 +10,6 @@
 
 ## 楔子
 
-<br>
 我是耳朵，一个一直想做知识输出的人。
 
 19年毕业后，我便一人离家独自来沪，出门前我以为上海是高楼林立，人流涌动。
@@ -39,9 +38,10 @@
 
 ## Spring Boot Learning List
 
-- [spring-security-demo](/tree/master/spring-security-demo)：Spring Security + JWT 实现认证与动态鉴权。
+* [spring-security-demo](/tree/master/spring-security-demo)：Spring Security + JWT 实现认证与动态鉴权。
 
-<br>
+    * **相关文章：**[SpringSecurity认证流程解析](https://juejin.im/post/5f01d648e51d45346a3ed1b7)
+
 
 ---
 
