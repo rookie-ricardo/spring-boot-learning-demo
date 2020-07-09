@@ -41,6 +41,7 @@
 * [spring-security-demo](/tree/master/spring-security-demo)：Spring Security + JWT 实现认证与动态鉴权。
 
     * **相关文章：**[SpringSecurity认证流程解析](https://juejin.im/post/5f01d648e51d45346a3ed1b7)
+    * **相关文章：**[SpringSecurity动态鉴权解析](https://juejin.im/post/5f01dcb7f265da22a8514d0d)
 
 
 ---
