@@ -42,6 +42,7 @@
 
     * **相关文章：**[SpringSecurity认证流程解析](https://juejin.im/post/5f01d648e51d45346a3ed1b7)
     * **相关文章：**[SpringSecurity动态鉴权解析](https://juejin.im/post/5f01dcb7f265da22a8514d0d)
+    * **相关文章：**[SpringSecurity启动流程解析](https://juejin.im/post/5f0e75e36fb9a07e5a1c44aa)
 
 
 ---
