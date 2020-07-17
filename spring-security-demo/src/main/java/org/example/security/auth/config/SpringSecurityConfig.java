@@ -50,6 +50,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 // 放行登录方法
                 .antMatchers("/api/auth/login").permitAll()
+                .antMatchers("/api/anon").permitAll()
                 // 其他请求都需要认证后才能访问
                 .anyRequest().authenticated()
                 // 使用自定义的 accessDecisionManager
