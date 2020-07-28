@@ -5,11 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>commons</artifactId>
+    <artifactId>spring-boot-learning</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-security-demo</module>
+        <module>spring-rabbitmq-demo</module>
     </modules>
 
 

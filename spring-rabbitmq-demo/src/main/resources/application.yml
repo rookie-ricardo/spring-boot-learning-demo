@@ -1,0 +1,14 @@
+server:
+  servlet:
+    # 请求数据转码UTF8
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+
+logging:
+  level:
+    web: debug
+    org:
+      example:
+        rabbitmq: debug
