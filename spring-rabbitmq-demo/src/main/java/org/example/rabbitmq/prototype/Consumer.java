@@ -18,23 +18,23 @@ public class Consumer {
         Connection connection = connectionFactory.newConnection();
         // 通过连接创建通道
         Channel channel = connection.createChannel();
-        // 创建一个名为耳朵的队列，该队列非持久(服务器重启后依然存在)、非独占(非仅用于此链接)、非自动删除(服务器将不再使用的队列删除)
-        channel.queueDeclare(Producer.QUEUE_NAME, false, false, false, null);
         // 创建消费者，阻塞接收消息
         com.rabbitmq.client.Consumer consumer = new DefaultConsumer(channel) {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 System.out.println("-------------------------------------------");
                 System.out.println("consumerTag : " + consumerTag);
-                System.out.println("exchange : " + envelope.getExchange());
-                System.out.println("routing key : " + envelope.getRoutingKey());
+                System.out.println("exchangeName : " + envelope.getExchange());
+                System.out.println("routingKey : " + envelope.getRoutingKey());
                 String msg = new String(body, StandardCharsets.UTF_8);
-                System.out.println("消息内容" + msg);
+                System.out.println("消息内容 : " + msg);
+
                 // 消息确认
                 channel.basicAck(envelope.getDeliveryTag(), false);
                 System.out.println("消息已确认");
             }
         };
+        // 启动消费者消费指定队列
         channel.basicConsume(Producer.QUEUE_NAME, consumer);
 //        channel.close();
 //        connection.close();

@@ -22,7 +22,7 @@ public class Producer {
         Connection connection = connectionFactory.newConnection();
         // 通过连接创建通道
         Channel channel = connection.createChannel();
-        // 创建一个名为耳朵的队列，该队列非持久(服务器重启后依然存在)、非独占(非仅用于此链接)、非自动删除(服务器将不再使用的队列删除)
+        // 创建一个名为耳朵的队列，该队列非持久(RabbitMQ重启后会消失)、非独占(非仅用于此链接)、非自动删除(服务器将不再使用的队列删除)
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
         String msg = "hello, 我是耳朵。" + LocalDateTime.now().toString();
         // 发布消息
