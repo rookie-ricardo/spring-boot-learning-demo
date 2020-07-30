@@ -1,8 +1,13 @@
 package org.example.rabbitmq.auto.component;
 
+import com.rabbitmq.client.Channel;
+import lombok.extern.slf4j.Slf4j;
+import org.example.rabbitmq.auto.entity.User;
 import org.example.rabbitmq.prototype.Producer;
+import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,15 +18,15 @@ import org.springframework.stereotype.Component;
  * @author 和耳朵
  * @since 2020-07-29 21:01
  */
+@Slf4j
 @Component("rabbitConsumer")
-@RabbitListener(queues = Producer.QUEUE_NAME)
 public class RabbitConsumer {
 
-    @RabbitHandler
-    public void onMessage(byte[] bytes) throws Exception {
-        String content = new String(bytes);
-        System.out.println("receive msg : " + content);
-
+    @RabbitListener(queues = Producer.QUEUE_NAME)
+    public void onMessage(Message message, Channel channel) throws Exception {
+        System.out.println("Message content : " + message);
+        channel.basicAck(message.getMessageProperties().getDeliveryTag(),false);
+        System.out.println("消息已确认");
     }
 
 }
