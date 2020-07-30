@@ -14,4 +14,9 @@ public class RabbitProduceTest {
         rabbitProduce.send();
         rabbitProduce.convertAndSend();
     }
+
+    @Test
+    public void sendJSONMessage() {
+        rabbitProduce.sendObject();
+    }
 }

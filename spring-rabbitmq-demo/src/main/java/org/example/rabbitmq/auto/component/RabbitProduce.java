@@ -1,6 +1,7 @@
 package org.example.rabbitmq.auto.component;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.rabbitmq.auto.entity.Client;
 import org.example.rabbitmq.auto.entity.User;
 import org.example.rabbitmq.prototype.Producer;
 import org.springframework.amqp.core.Message;
@@ -46,6 +47,15 @@ public class RabbitProduce {
         System.out.println("Message content : " + user);
 
         rabbitTemplate.convertAndSend(Producer.QUEUE_NAME,user);
+        System.out.println("消息发送完毕。");
+    }
+
+    public void sendObject() {
+        Client client = new Client();
+
+        System.out.println("Message content : " + client);
+
+        rabbitTemplate.convertAndSend(RabbitJsonConsumer.JSON_QUEUE,client);
         System.out.println("消息发送完毕。");
     }
 

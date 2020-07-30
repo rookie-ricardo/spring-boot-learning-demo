@@ -2,17 +2,14 @@ package org.example.rabbitmq.auto.component;
 
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
-import org.example.rabbitmq.auto.entity.User;
 import org.example.rabbitmq.prototype.Producer;
 import org.springframework.amqp.core.Message;
-import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 /**
  * <p>
- * 订单消费者
+ *
  * </p>
  *
  * @author 和耳朵
