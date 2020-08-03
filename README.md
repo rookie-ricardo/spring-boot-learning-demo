@@ -46,6 +46,8 @@
 
 * [spring-rabbitmq-demo](/tree/master/spring-rabbitmq-demo)：Spring Boot + RabbitMQ 实现生产者消费者。
 
+    * **相关文章：**[没用过消息队列？一文带你体验RabbitMQ收发消息](https://juejin.im/post/6856571028496351239)
+
 ---
 
 注：项目相关数据库文件都放在demo下的resource下的doc文件下。
