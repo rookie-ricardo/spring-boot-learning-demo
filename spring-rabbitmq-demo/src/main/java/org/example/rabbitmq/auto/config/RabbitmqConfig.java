@@ -89,6 +89,33 @@ public class RabbitmqConfig {
         return BindingBuilder.bind(directQueue2()).to(directExchange()).with("mail");
     }
 
+    // 主题交换机示例
+    @Bean
+    public Queue topicQueue1() {
+        return new Queue("topicQueue1");
+    }
+
+    @Bean
+    public Queue topicQueue2() {
+        return new Queue("topicQueue2");
+    }
+
+    @Bean
+    public TopicExchange topicExchange() {
+        // 三个构造参数：name durable autoDelete
+        return new TopicExchange("topicExchange", false, false);
+    }
+
+    @Bean
+    public Binding topicBinding1() {
+        return BindingBuilder.bind(topicQueue1()).to(topicExchange()).with("sms.*");
+    }
+
+    @Bean
+    public Binding topicBinding2() {
+        return BindingBuilder.bind(topicQueue2()).to(topicExchange()).with("mail.#");
+    }
+
     @Bean
     public MessageConverter jackson2JsonMessageConverter() {
         return new Jackson2JsonMessageConverter(jacksonObjectMapper);

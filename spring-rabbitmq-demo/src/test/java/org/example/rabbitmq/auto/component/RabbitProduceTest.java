@@ -29,4 +29,9 @@ public class RabbitProduceTest {
     public void sendDirectMessage() {
         rabbitProduce.sendDirect();
     }
+
+    @Test
+    public void sendTopicMessage() {
+        rabbitProduce.sendTopic();
+    }
 }

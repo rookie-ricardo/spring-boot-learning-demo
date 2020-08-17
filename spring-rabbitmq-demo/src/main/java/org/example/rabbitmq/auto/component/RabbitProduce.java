@@ -78,4 +78,13 @@ public class RabbitProduce {
         System.out.println("消息发送完毕。");
     }
 
+    public void sendTopic() {
+        Client client = new Client();
+
+        log.info("Message content : " + client);
+
+        rabbitTemplate.convertAndSend("topicExchange","sms.liantong",client);
+        System.out.println("消息发送完毕。");
+    }
+
 }
