@@ -59,4 +59,14 @@ public class RabbitProduce {
         System.out.println("消息发送完毕。");
     }
 
+    public void sendFanout() {
+        Client client = new Client();
+
+        // 应读者要求，以后代码打印的地方都会改成log方式，这是一种良好的编程习惯，用System.out.println一般是不推荐的。
+        log.info("Message content : " + client);
+
+        rabbitTemplate.convertAndSend("fanoutExchange",null,client);
+        System.out.println("消息发送完毕。");
+    }
+
 }

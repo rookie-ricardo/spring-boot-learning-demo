@@ -19,4 +19,9 @@ public class RabbitProduceTest {
     public void sendJSONMessage() {
         rabbitProduce.sendObject();
     }
+
+    @Test
+    public void sendFanoutMessage() {
+        rabbitProduce.sendFanout();
+    }
 }
