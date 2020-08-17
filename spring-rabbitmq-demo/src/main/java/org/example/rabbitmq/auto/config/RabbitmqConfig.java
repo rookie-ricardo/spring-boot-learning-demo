@@ -35,6 +35,7 @@ public class RabbitmqConfig {
         return new Queue("erduo_json",true);
     }
 
+    // 扇形交换机示例
     @Bean
     public Queue fanout1() {
         return new Queue("fanout1");
@@ -59,6 +60,33 @@ public class RabbitmqConfig {
     @Bean
     public Binding binding2() {
         return BindingBuilder.bind(fanout2()).to(fanoutExchange());
+    }
+
+    // 直接交换机示例
+    @Bean
+    public Queue directQueue1() {
+        return new Queue("directQueue1");
+    }
+
+    @Bean
+    public Queue directQueue2() {
+        return new Queue("directQueue2");
+    }
+
+    @Bean
+    public DirectExchange directExchange() {
+        // 三个构造参数：name durable autoDelete
+        return new DirectExchange("directExchange", false, false);
+    }
+
+    @Bean
+    public Binding directBinding1() {
+        return BindingBuilder.bind(directQueue1()).to(directExchange()).with("sms");
+    }
+
+    @Bean
+    public Binding directBinding2() {
+        return BindingBuilder.bind(directQueue2()).to(directExchange()).with("mail");
     }
 
     @Bean

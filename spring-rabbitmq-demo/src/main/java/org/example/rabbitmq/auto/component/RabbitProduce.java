@@ -69,4 +69,13 @@ public class RabbitProduce {
         System.out.println("消息发送完毕。");
     }
 
+    public void sendDirect() {
+        Client client = new Client();
+
+        log.info("Message content : " + client);
+
+        rabbitTemplate.convertAndSend("directExchange","sms",client);
+        System.out.println("消息发送完毕。");
+    }
+
 }

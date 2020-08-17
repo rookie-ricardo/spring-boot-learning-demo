@@ -24,4 +24,9 @@ public class RabbitProduceTest {
     public void sendFanoutMessage() {
         rabbitProduce.sendFanout();
     }
+
+    @Test
+    public void sendDirectMessage() {
+        rabbitProduce.sendDirect();
+    }
 }
