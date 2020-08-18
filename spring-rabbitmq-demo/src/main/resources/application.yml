@@ -19,6 +19,12 @@ spring:
     username: guest
     password: guest
     virtual-host: /
+    # 打开消息确认机制
+    publisher-confirm-type: correlated
+    # 打开消息返回
+    publisher-returns: true
+    template:
+      mandatory: true
     # 手动确认消息
     listener:
       simple:

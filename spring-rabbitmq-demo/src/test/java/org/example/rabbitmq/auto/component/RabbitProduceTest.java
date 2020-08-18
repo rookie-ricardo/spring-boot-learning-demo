@@ -34,4 +34,16 @@ public class RabbitProduceTest {
     public void sendTopicMessage() {
         rabbitProduce.sendTopic();
     }
+
+    @Test
+    public void sendAndConfirm() throws InterruptedException {
+        rabbitProduce.sendAndConfirm();
+        Thread.sleep(3000);
+    }
+
+    @Test
+    public void sendAndReturn() throws InterruptedException {
+        rabbitProduce.sendAndReturn();
+        Thread.sleep(3000);
+    }
 }
