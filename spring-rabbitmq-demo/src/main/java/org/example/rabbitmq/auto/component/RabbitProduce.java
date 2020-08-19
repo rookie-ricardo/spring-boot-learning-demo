@@ -10,11 +10,6 @@ import org.springframework.amqp.core.MessagePropertiesBuilder;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.retry.RetryCallback;
-import org.springframework.retry.RetryContext;
-import org.springframework.retry.RetryListener;
-import org.springframework.retry.backoff.NoBackOffPolicy;
-import org.springframework.retry.support.RetryTemplate;
 import org.springframework.stereotype.Component;
 
 import java.nio.charset.StandardCharsets;
@@ -131,8 +126,21 @@ public class RabbitProduce {
             log.info("routingKey：{}", routingKey);
         });
 
-        rabbitTemplate.convertAndSend("fail",user);
+        rabbitTemplate.convertAndSend("fail", user);
         log.info("消息发送完毕。");
+    }
+
+    public void sendTtl() {
+        String message = "Hello 我是作者和耳朵，欢迎关注我。" + LocalDateTime.now().toString();
+
+        System.out.println("Message content : " + message);
+
+        // 设置过期3s
+        MessageProperties props = MessagePropertiesBuilder.newInstance()
+                .setExpiration("3000").build();
+
+        rabbitTemplate.send(Producer.QUEUE_NAME, new Message(message.getBytes(StandardCharsets.UTF_8), props));
+        System.out.println("消息发送完毕。");
     }
 
 }

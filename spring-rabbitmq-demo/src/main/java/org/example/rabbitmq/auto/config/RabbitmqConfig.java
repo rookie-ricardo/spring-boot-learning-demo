@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>
  *
@@ -114,6 +117,24 @@ public class RabbitmqConfig {
     @Bean
     public Binding topicBinding2() {
         return BindingBuilder.bind(topicQueue2()).to(topicExchange()).with("mail.#");
+    }
+
+    // TTL队列示例
+    @Bean
+    public Queue ttlQueue() {
+        Map<String, Object> arguments = new HashMap<>();
+        // 设置3s过期
+        arguments.put("x-message-ttl", 3000);
+        return new Queue("topicQueue1", false, false, false, arguments);
+    }
+
+    // DLX队列示例
+    @Bean
+    public Queue dlxQueue() {
+        Map<String, Object> arguments = new HashMap<>();
+        // 指定消息死亡后发送到ExchangeName="dlx.exchange"的交换机去
+        arguments.put("x-dead-letter-exchange","dlx.exchange");
+        return new Queue("topicQueue1", false, false, false, arguments);
     }
 
     @Bean
