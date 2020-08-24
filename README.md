@@ -49,6 +49,8 @@
     * **相关文章：**[没用过消息队列？一文带你体验RabbitMQ收发消息](https://juejin.im/post/6856571028496351239)
     * **相关文章：**[刚体验完RabbitMQ？一文带你SpringBoot+RabbitMQ方式收发消息](https://juejin.im/post/6859152029823008781)
     * **相关文章：**[上手了RabbitMQ？再来看看它的交换机(Exchange)吧](https://juejin.im/post/6861959704705237000/)
+    * **相关文章：**[RabbitMQ高级之如何保证消息可靠性？](https://juejin.im/post/6862875289786662926)
+    * **相关文章：**[RabbitMQ高级之消息限流与延时队列](https://juejin.im/post/6864360098077081613)
 
 ---
 
