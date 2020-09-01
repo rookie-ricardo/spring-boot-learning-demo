@@ -1,13 +1,13 @@
-package org.example.rabbitmq;
+package com.example.mongodb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class SpringMongodbApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(SpringMongodbApplication.class, args);
     }
 
 }

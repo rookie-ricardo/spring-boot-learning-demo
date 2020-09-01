@@ -11,6 +11,7 @@
     <modules>
         <module>spring-security-demo</module>
         <module>spring-rabbitmq-demo</module>
+        <module>spring-mongodb-demo</module>
     </modules>
 
 
@@ -72,6 +73,19 @@
         <!-- 工具包 end -->
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <!--阿里云仓库-->
