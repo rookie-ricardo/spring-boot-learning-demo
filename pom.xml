@@ -16,6 +16,8 @@
         <module>spring-eureka-demo/eureka-server-duplicate</module>
         <module>spring-eureka-demo/eureka-producer-service</module>
         <module>spring-eureka-demo/eureka-consumer-service</module>
+        <module>spring-zookeeper-demo/zookeeper-consumer-service</module>
+        <module>spring-zookeeper-demo/zookeeper-producer-service</module>
     </modules>
 
     <!--统一管理jar包版本-->

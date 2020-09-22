@@ -53,5 +53,8 @@
     * **相关文章：**[RabbitMQ高级之消息限流与延时队列](https://juejin.im/post/6864360098077081613)
 
 ---
+有些新加的模块还没有编写对应的文章，请耐心等待，最近有点忙在准备面试，如果愿意持续关注我，可以添加公众号：和耳朵。
+
+![](https://mmbiz.qpic.cn/mmbiz_gif/vYNUS0pZChh7Y75xUXribIRhCV9eVyzEicnWU0LWQpeSSjnN4HNzBBV3wIxdzLEoZ0MObOmz1goeClsDZhmEZXpw/0?wx_fmt=gif)
 
 注：项目相关数据库文件都放在demo下的resource下的doc文件下。

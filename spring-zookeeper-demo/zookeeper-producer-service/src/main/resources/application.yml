@@ -1,0 +1,12 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: zookeeper-producer-service
+  # 配置 ZooKeeper 注册中心
+  cloud:
+    zookeeper:
+      discovery:
+        enabled: true # 如果不想使用 ZooKeeper 进行服务注册和发现，设置为 false 即可
+      connect-string: 192.168.10.101:2181,192.168.10.102:2181,192.168.10.103:2181
