@@ -1,0 +1,16 @@
+server:
+  port: 8002
+eureka:
+  instance:
+    # Eureka实例名称
+    hostname: eureka-server
+  client:
+    # 服务端不需要注册自己
+    register-with-eureka: false
+    # 服务端不需要检索服务
+    fetch-registry: false
+    service-url:
+      # 设置Eureka-Service的本机地址 客户端访问Eureka服务就访问此地址
+      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # Eureka集群进行互相注册
+      defaultZone: http://localhost:8001/eureka/

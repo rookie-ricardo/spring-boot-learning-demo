@@ -1,0 +1,24 @@
+server:
+  port: 8005
+spring:
+  application:
+    name: consumer-service
+eureka:
+  instance:
+    instance-id: producer-service:${server.port}
+    # 显示IP地址
+    prefer-ip-address: true
+    # 客户端心跳发送频率
+    # lease-renewal-interval-in-seconds: 1
+    # 服务挂机X秒后自动剔除
+    # lease-expiration-duration-in-seconds: 5
+  client:
+    # APP节点注册 默认true
+    register-with-eureka: true
+    # APP节点检索 默认true
+    fetch-registry: true
+    service-url:
+      # 设置Eureka-Service地址
+      # defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://localhost:8001/eureka/,http://localhost:8002/eureka/
+
