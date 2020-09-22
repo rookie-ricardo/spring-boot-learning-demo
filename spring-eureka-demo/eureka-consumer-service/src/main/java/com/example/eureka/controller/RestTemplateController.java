@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 public class RestTemplateController {
     @Autowired
     private RestTemplate restTemplate;
-    private static final String host = "http://producer-service";
+    private static final String host = "http://eureka-producer-service";
 
     @GetMapping("/consumer/rest")
     public String test(){

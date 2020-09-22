@@ -14,8 +14,8 @@
         <module>spring-mongodb-demo</module>
         <module>spring-eureka-demo/eureka-server</module>
         <module>spring-eureka-demo/eureka-server-duplicate</module>
-        <module>spring-eureka-demo/producer-service</module>
-        <module>spring-eureka-demo/consumer-service</module>
+        <module>spring-eureka-demo/eureka-producer-service</module>
+        <module>spring-eureka-demo/eureka-consumer-service</module>
     </modules>
 
     <!--统一管理jar包版本-->

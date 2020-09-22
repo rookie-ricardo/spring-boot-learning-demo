@@ -2,7 +2,7 @@ server:
   port: 8003
 spring:
   application:
-    name: producer-service
+    name: eureka-producer-service
 eureka:
   instance:
     instance-id: producer-service:${server.port}
