@@ -12,14 +12,17 @@
         <module>spring-security-demo</module>
         <module>spring-rabbitmq-demo</module>
         <module>spring-mongodb-demo</module>
+        <module>spring-eureka-demo/eureka-server</module>
     </modules>
 
-
+    <!--统一管理jar包版本-->
     <properties>
         <utf8>UTF-8</utf8>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>${utf8}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${utf8}</project.reporting.outputEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
         <mybatis.plus.version>3.3.0</mybatis.plus.version>
         <mysql.version>5.1.47</mysql.version>
@@ -28,7 +31,8 @@
         <velocity.version>1.7</velocity.version>
         <p6spy.version>3.8.6</p6spy.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-
+        <spring.cloud-version>Hoxton.SR8</spring.cloud-version>
+        <spring.cloud.alibaba-version>2.2.1.RELEASE</spring.cloud.alibaba-version>
     </properties>
 
     <dependencyManagement>
@@ -37,6 +41,22 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud-version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring.cloud.alibaba-version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -69,7 +89,6 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <!-- 工具包 end -->
 
     </dependencies>
