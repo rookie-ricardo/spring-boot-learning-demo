@@ -22,11 +22,11 @@ public class User {
     @Id
     private String id = UUID.randomUUID().toString();
 
-    private String username;
+    private String username = "和耳朵";
 
-    private String password;
+    private String password = "123456";
 
-    private Integer activeStatus;
+    private Integer activeStatus = 1;
 
     private LocalDateTime createTime = LocalDateTime.now();
 
