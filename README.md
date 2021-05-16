@@ -43,6 +43,7 @@
     * **相关文章：**[SpringSecurity认证流程解析](https://juejin.im/post/5f01d648e51d45346a3ed1b7)
     * **相关文章：**[SpringSecurity动态鉴权解析](https://juejin.im/post/5f01dcb7f265da22a8514d0d)
     * **相关文章：**[SpringSecurity启动流程解析](https://juejin.im/post/5f0e75e36fb9a07e5a1c44aa)
+    * **相关文章：**[SpringSecurity入口详解](https://juejin.cn/post/6960487717452906503)
 
 * [spring-rabbitmq-demo](/tree/master/spring-rabbitmq-demo)：Spring Boot + RabbitMQ 实现生产者消费者。
 
