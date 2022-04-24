@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket</title>
+
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #box{
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 90vh;
+    }
+
+    #content{
+        display: flex;
+        display: -webkit-flex;
+        border: 1px black solid;
+        height: 60%;
+        width: 40%;
+        overflow: auto;
+        flex: 0 0 40%;
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    .msgStyle{
+        border-radius: 5% 5% 5% 5%;
+        display: flex;
+        justify-content: flex-end;
+        margin: 1vh 1vh 1vh 1vh;
+    }
+
+    .msgSpan{
+        background-color: #47e778;
+        width: 50%;
+    }
+
+    .msgStyle1{
+        width: 0;
+        height: 0;
+        border-left: 10px #47e778 solid;
+        border-top: 10px transparent solid;
+        border-bottom: 10px transparent solid;
+
+    }
+
+    .msgStyle2{
+        width: 0;
+        height: 0;
+        border-right: 10px #47e778 solid;
+        border-top: 10px transparent solid;
+        border-bottom: 10px transparent solid;
+    }
+
+</style>
+<body>
+<div id = "box">
+    <h3>Hello Socket</h3>
+    <br/>
+    <div id="content">
+
+    </div>
+
+    <div id="inputBox">
+        <button id="socketStatus" onclick="openSocket()">打开WebSocket</button>
+        <input id="msg" type="text" value="测试消息"/>
+        <button onclick="sendMessage()">发送消息</button>
+    </div>
+
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+<script>
+
+    let socket;
+    let socketStatus = true;
+    function openSocket() {
+        if(typeof(WebSocket) == "undefined") {
+            console.log("您的浏览器不支持WebSocket");
+        }else{
+            console.log("您的浏览器支持WebSocket");
+            changeSocketStatus();
+        }
+    }
+
+    function changeSocketStatus() {
+        let element = document.getElementById("socketStatus");
+        if (socketStatus) {
+            element.textContent = "关闭WebSocket";
+            const socketUrl="ws://127.0.0.1:8001";
+            socket = io.connect(socketUrl, {
+                transports: ['websocket'],
+                path: "/socketio-ws"
+            });
+            //打开事件
+            socket.on('connect', () => {
+                console.log("websocket已打开");
+            });
+            //获得消息事件
+            socket.on('chatMsg', (msg) => {
+                const serverMsg = "收到服务端信息：" + msg;
+                pushContent(serverMsg, 2);
+            });
+            //关闭事件
+            socket.on('disconnect', () => {
+                console.log("websocket已关闭");
+            });
+            //发生了错误事件
+            socket.on('connect_error', () => {
+                console.log("websocket发生了错误");
+            })
+        } else {
+            element.textContent = "打开WebSocket"
+            socket.close();
+        }
+        socketStatus = !socketStatus;
+    }
+
+    function sendMessage() {
+        let msg = document.getElementById('msg').value;
+
+        msg = '{"contentText":"' + msg + '"}';
+
+        sendMsg(msg);
+    }
+
+    function sendMsg(msg) {
+        if (socket !== undefined) {
+
+            new Promise((resolve) => {
+                // 发消息
+                socket.emit('onMsg', msg)
+
+                resolve();
+            }).then(() => {
+                // 输入到公屏
+                pushContent(msg);
+
+            }).catch(() => {
+                alert("websocket发生了错误, 已经失去连接。");
+            });
+
+        } else {
+            alert("websocket发生了错误, 已经失去连接。")
+        }
+    }
+
+    function pushContent(msg, style = 1) {
+        let content = document.getElementById('content');
+
+        let htmlDiv = document.createElement(HTMLDivElement.name);
+        htmlDiv.className = "msgStyle";
+        content.appendChild(htmlDiv);
+
+        if (style === 1) {
+            createHtmlSpan(htmlDiv, msg);
+            createHtmlBorder(htmlDiv, style);
+        }
+
+        if (style === 2) {
+            createHtmlBorder(htmlDiv, style);
+            createHtmlSpan(htmlDiv, msg);
+            htmlDiv.style.setProperty("justify-content", "flex-start");
+        }
+
+    }
+
+    function createHtmlSpan(htmlDiv, msg) {
+        let htmlSpanElement = document.createElement(HTMLSpanElement.name);
+        htmlSpanElement.className = "msgSpan";
+        htmlSpanElement.textContent = msg;
+        htmlDiv.appendChild(htmlSpanElement);
+    }
+
+    function createHtmlBorder(htmlDiv, style) {
+        let htmlDivBorder = document.createElement(HTMLDivElement.name);
+        htmlDivBorder.className = "msgStyle" + style;
+        htmlDiv.appendChild(htmlDivBorder);
+    }
+
+</script>
+</html>
