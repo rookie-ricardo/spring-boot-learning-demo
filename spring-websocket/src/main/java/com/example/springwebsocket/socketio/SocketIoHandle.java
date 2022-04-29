@@ -32,6 +32,6 @@ public class SocketIoHandle {
     public void onMessage(SocketIOClient client, AckRequest request, Object data) {
         System.out.println("SocketIoHandle 收到消息：" + data);
         request.isAckRequested();
-        client.sendEvent("chatMsg", "我是websocket后端服务");
+        client.sendEvent("chatMsg", "我是 NettySocketIO 后端服务，已收到连接：" + client.getSessionId());
     }
 }

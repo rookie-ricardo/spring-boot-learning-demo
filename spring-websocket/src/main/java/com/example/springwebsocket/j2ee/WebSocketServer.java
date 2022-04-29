@@ -2,10 +2,7 @@ package com.example.springwebsocket.j2ee;
 
 import org.springframework.stereotype.Component;
 
-import javax.websocket.OnError;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.Session;
+import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
@@ -31,6 +28,13 @@ public class WebSocketServer {
         session.getBasicRemote().sendText(message);
     }
 
+    //连接关闭
+    @OnClose
+    public void onclose(Session session){
+
+        System.out.println("连接关闭");
+    }
+
     //错误时调用
     @OnError
     public void onError(Session session, Throwable throwable){
@@ -38,7 +42,5 @@ public class WebSocketServer {
         System.out.println("发生错误");
         throwable.printStackTrace();
     }
-
-
 
 }
