@@ -10,14 +10,14 @@
 
 ## Spring Boot Learning List
 
-* [spring-security-demo](/tree/master/spring-security-demo)：Spring Security + JWT 实现认证与动态鉴权。
+* [spring-security-demo](/spring-security-demo)：Spring Security + JWT 实现认证与动态鉴权。
 
     * **相关文章：**[SpringSecurity认证流程解析](https://juejin.im/post/5f01d648e51d45346a3ed1b7)
     * **相关文章：**[SpringSecurity动态鉴权解析](https://juejin.im/post/5f01dcb7f265da22a8514d0d)
     * **相关文章：**[SpringSecurity启动流程解析](https://juejin.im/post/5f0e75e36fb9a07e5a1c44aa)
     * **相关文章：**[SpringSecurity入口详解](https://juejin.cn/post/6960487717452906503)
 
-* [spring-rabbitmq-demo](/tree/master/spring-rabbitmq-demo)：Spring Boot + RabbitMQ 实现生产者消费者。
+* [spring-rabbitmq-demo](/spring-rabbitmq-demo)：Spring Boot + RabbitMQ 实现生产者消费者。
 
     * **相关文章：**[没用过消息队列？一文带你体验RabbitMQ收发消息](https://juejin.im/post/6856571028496351239)
     * **相关文章：**[刚体验完RabbitMQ？一文带你SpringBoot+RabbitMQ方式收发消息](https://juejin.im/post/6859152029823008781)
@@ -25,6 +25,9 @@
     * **相关文章：**[RabbitMQ高级之如何保证消息可靠性？](https://juejin.im/post/6862875289786662926)
     * **相关文章：**[RabbitMQ高级之消息限流与延时队列](https://juejin.im/post/6864360098077081613)
 
+* [spring-websocket](/spring-websocket)：Spring Boot / J2EE + WebSocket 实现常用功能。
+
+  * **相关文章：**[一文搞懂四种 WebSocket 使用方式](https://juejin.cn/post/7095940082187632677)
 ---
 
 注：项目相关数据库文件都放在demo下的resource下的doc文件下。
