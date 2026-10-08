@@ -31,7 +31,7 @@
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
         <mybatis.plus.version>3.3.0</mybatis.plus.version>
         <mysql.version>5.1.47</mysql.version>
-        <hutool.version>5.1.0</hutool.version>
+        <hutool.version>5.8.21</hutool.version>
         <lombok.version>1.18.10</lombok.version>
         <velocity.version>1.7</velocity.version>
         <p6spy.version>3.8.6</p6spy.version>
